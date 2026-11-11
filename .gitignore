@@ -1,0 +1,30 @@
+# Personal data: HomeKit copies, descriptions, exports (never committed)
+data/
+exports/
+*.sqlite*
+*.shortcut
+*.png
+*.jpg
+*.jpeg
+*.pdf
+.env
+
+# Python runtime & caches
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+.pytest_cache/
+
+# macOS
+.DS_Store
+
+# Local editor and agent state
+.claude/
+
+# Change-tracking job logs
+logs/
+
+# A local notifier adapter holds an address or a token
+/scripts/local_notifier.py

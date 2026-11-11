@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<!-- Daily change tracking. Replace {{PROJECT_DIR}} (absolute, no trailing slash) and {{PYTHON}} (an absolute
+     python3.12 that has Full Disk Access), save as ~/Library/LaunchAgents/local.homekit-change-tracker.plist,
+     The program writes its own log into logs/ (no shell, no redirect).
+     Then: launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/local.homekit-change-tracker.plist -->
+<dict>
+  <key>Label</key>
+  <string>local.homekit-change-tracker</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>{{PYTHON}}</string>
+    <string>-B</string>
+    <string>{{PROJECT_DIR}}/scripts/track_changes.py</string>
+    <string>--log-dir</string>
+    <string>{{PROJECT_DIR}}/logs</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>12</integer>
+    <key>Minute</key>
+    <integer>0</integer>
+  </dict>
+</dict>
+</plist>

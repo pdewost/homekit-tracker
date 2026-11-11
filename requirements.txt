@@ -1,0 +1,1 @@
+# Standard library only: no third-party package is needed. Python 3.12 or later (src/__init__.py checks it).
